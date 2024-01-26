@@ -27,6 +27,15 @@ public class MovieService {
         } else {
             throw new MovieNotFoundException("No movie exists with this id in the database");
         }
-
     }
+
+    public Movie getMovieByImdbId(String imdbId) throws MovieNotFoundException {
+        Optional<Movie> movie = movieRepository.findByImdbId(imdbId);
+        if (movie.isPresent()) {
+            return movie.get();
+        } else {
+            throw new MovieNotFoundException("No Movie exists with this imdbId in the database");
+        }
+    }
+
 }

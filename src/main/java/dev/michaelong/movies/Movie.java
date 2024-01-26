@@ -20,7 +20,7 @@ public class Movie {
     @Id
     private ObjectId id;
 
-    private String ImdbId;
+    private String imdbId;
 
     public String title;
 

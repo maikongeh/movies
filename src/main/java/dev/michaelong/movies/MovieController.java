@@ -26,7 +26,14 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
+    // PathVariable lets the framework know that the id from ObjectId will be parsed as info for getMapping
     public ResponseEntity<Movie> getMovieById(@PathVariable("id") ObjectId id) throws MovieNotFoundException {
         return new ResponseEntity<Movie>(movieService.getMovieById(id), HttpStatus.OK);
     }
+
+    @GetMapping("/imdb/{imdbId}")
+    public ResponseEntity<Movie>getMovieById(@PathVariable String imdbId) throws MovieNotFoundException {
+        return new ResponseEntity<Movie>(movieService.getMovieByImdbId(imdbId), HttpStatus.OK);
+    }
+
 }
