@@ -30,7 +30,7 @@ public class Movie {
 
     private List<String> genre;
 
-    private String posterImg;
+    private String poster;
 
     private String backdrops;
 
